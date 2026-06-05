@@ -1,0 +1,71 @@
+# Python / Backend
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# pytest / coverage
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+*.coveragerc
+test.db
+test_run.db
+
+# Node / Frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+.cache/
+
+# Vite
+.vite/
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+.env.production
+*.pem
+*.key
+
+# Media
+backend/static/images/
+backend/static/sounds/
+backend/static/music/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
