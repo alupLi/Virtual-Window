@@ -1,0 +1,94 @@
+.breathing-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  background: rgba(5, 8, 20, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: fade-in 0.4s ease;
+}
+
+.breathing-overlay__fog {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 55%,
+    rgba(140,150,200,0.08) 0%,
+    rgba(100,110,180,0.04) 40%,
+    transparent 70%
+  );
+  animation: fog-drift 6s ease-in-out infinite alternate;
+}
+
+.breathing-circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  z-index: 1;
+}
+
+.breathing-circle__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(180,170,255,0.35);
+  transform: scale(0.8);
+  transition: transform 0.6s ease, border-color 0.6s ease;
+}
+
+.breathing-circle--in .breathing-circle__ring {
+  transform: scale(1);
+  border-color: rgba(180,170,255,0.7);
+  box-shadow: 0 0 40px rgba(124,106,245,0.25), inset 0 0 40px rgba(124,106,245,0.08);
+  animation: breathe-in var(--dur, 4s) linear forwards;
+}
+.breathing-circle--hold .breathing-circle__ring {
+  transform: scale(1);
+  border-color: rgba(180,210,255,0.8);
+  box-shadow: 0 0 60px rgba(100,160,255,0.3), inset 0 0 60px rgba(100,160,255,0.1);
+  animation: pulse-ring 1.5s ease-in-out infinite;
+}
+.breathing-circle--out .breathing-circle__ring {
+  transform: scale(0.6);
+  border-color: rgba(180,170,255,0.2);
+  animation: breathe-out var(--dur, 8s) linear forwards;
+}
+
+.breathing-circle__inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.breathing-circle__label {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+}
+
+.breathing-circle__count {
+  font-family: var(--font-display);
+  font-size: 52px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.75);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.breathing-overlay__hint {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.22);
+  z-index: 1;
+}
