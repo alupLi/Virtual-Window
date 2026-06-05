@@ -1,16 +1,9 @@
 import time
 import pytest
 
-
-# Согласно требованиям: время отклика не более 500 мс (ГОСТ 34.602-89)
-RESPONSE_TIME_LIMIT = 0.5  # секунд
-
+RESPONSE_TIME_LIMIT = 0.5
 
 class TestResponseTime:
-    """
-    Тесты времени отклика согласно ГОСТ 34.602-89, раздел 3.2.4.6.
-    Допустимое время реакции сервера: не более 500 мс.
-    """
 
     def _measure(self, fn):
         start = time.perf_counter()

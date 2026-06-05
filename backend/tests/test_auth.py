@@ -13,7 +13,7 @@ class TestAuthRegister:
         data = r.json()
         assert data["email"] == "newuser@test.com"
         assert data["username"] == "newuser"
-        assert "password_hash" not in data  # пароль не возвращается
+        assert "password_hash" not in data
 
     def test_register_duplicate_email(self, client):
         payload = {"username": "u1", "email": "dup@test.com", "password": "pass"}
@@ -26,7 +26,7 @@ class TestAuthRegister:
         r = client.post("/auth/register", json={
             "username": "u2", "email": "not-an-email", "password": "pass"
         })
-        assert r.status_code == 422  # Pydantic validation error
+        assert r.status_code == 422
 
     def test_register_missing_fields(self, client):
         r = client.post("/auth/register", json={"username": "u3"})
