@@ -1,0 +1,104 @@
+.loc-drop {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 1400px;
+  border-radius: var(--radius);
+  padding: 16px 20px 20px;
+  z-index: 90;
+  animation: slide-down 0.22s var(--ease-out);
+}
+
+.loc-drop__tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.loc-drop__tab {
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+}
+.loc-drop__tab:hover { color: var(--text); background: var(--glass-hover); }
+.loc-drop__tab--active {
+  color: #b8aaff;
+  background: var(--accent-light);
+  border-color: rgba(124,106,245,0.3);
+}
+
+.loc-drop__cards {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+}
+.loc-drop__cards::-webkit-scrollbar { height: 3px; }
+.loc-drop__cards::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 2px; }
+
+.loc-card {
+  flex-shrink: 0;
+  width: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  position: relative;
+}
+.loc-card:hover { background: var(--glass-hover); }
+.loc-card--active {
+  background: var(--accent-light);
+  border-color: rgba(124,106,245,0.3);
+}
+
+.loc-card__thumb {
+  width: 88px;
+  height: 62px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(255,255,255,0.05);
+}
+
+.loc-card__name {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text);
+  width: 100%;
+  text-align: center;
+}
+.loc-card__sub {
+  font-size: 10px;
+  color: var(--text-muted);
+  width: 100%;
+  text-align: center;
+}
+
+.loc-card__fav {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1;
+  transition: color 0.15s, transform 0.15s;
+  background: rgba(0,0,0,0.4);
+  border-radius: 50%;
+  width: 20px; height: 20px;
+  display: flex; align-items: center; justify-content: center;
+}
+.loc-card__fav:hover { color: #ff6b9d; transform: scale(1.2); }
+.loc-card__fav--on   { color: #ff6b9d; }
