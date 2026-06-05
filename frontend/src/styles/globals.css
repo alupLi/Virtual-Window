@@ -46,7 +46,6 @@ input  { font-family: var(--font-ui); }
 
 .ellipsis { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-/* ── Glass mixin (apply as class) ─────────────────────────────────────────── */
 .glass {
   background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur));
@@ -54,7 +53,6 @@ input  { font-family: var(--font-ui); }
   border: 1px solid var(--glass-border);
 }
 
-/* ── Keyframes ────────────────────────────────────────────────────────────── */
 @keyframes fade-in {
   from { opacity: 0; }
   to   { opacity: 1; }
